@@ -1,0 +1,125 @@
+/* Component & Widget Styles */
+@import 'variables.css';
+
+/* --- Top Risk Banner (The Sentinel) --- */
+.risk-banner {
+    background-color: var(--color-bg-panel);
+    border-bottom: 1px solid var(--color-border);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--spacing-md);
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    position: relative;
+    z-index: var(--z-risk-banner);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.risk-metric-group {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.risk-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.risk-item .label {
+    font-size: 9px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.risk-item .value {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+/* Status Indicators */
+.status-pill {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border);
+}
+
+.status-normal {
+    color: var(--color-accent-teal);
+    border-color: var(--color-accent-teal-dim);
+}
+
+.status-warning {
+    color: var(--color-accent-orange);
+    border-color: var(--color-accent-orange);
+    background: var(--color-accent-orange-dim);
+}
+
+.status-critical {
+    color: var(--color-accent-red);
+    border-color: var(--color-accent-red);
+    background: var(--color-accent-red-dim);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* --- Widget Specifics --- */
+
+/* Chart Widget */
+.chart-container {
+    width: 100%;
+    height: 100%;
+    background: #131722;
+    /* TradingView BG clone */
+    position: relative;
+}
+
+/* Order Book */
+.book-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 4px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    cursor: pointer;
+}
+
+.book-row:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.ask-text {
+    color: var(--color-accent-red);
+}
+
+.bid-text {
+    color: var(--color-accent-teal);
+}
+
+/* Grid Interaction */
+.grid-item-active {
+    border: 1px solid var(--color-accent-teal);
+    box-shadow: 0 0 0 2px rgba(0, 206, 155, 0.2);
+}

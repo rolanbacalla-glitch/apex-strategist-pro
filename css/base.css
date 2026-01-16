@@ -1,0 +1,172 @@
+/* Base & Layout */
+
+@import 'variables.css';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-bg-app);
+    color: var(--text-primary);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    /* High density default */
+    height: 100vh;
+    overflow: hidden;
+    /* App-like feel */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.mono {
+    font-family: var(--font-mono);
+}
+
+.text-sm {
+    font-size: 11px;
+}
+
+.text-lg {
+    font-size: 15px;
+}
+
+/* --- Risk Colors Utility --- */
+.text-long {
+    color: var(--color-accent-teal);
+}
+
+.text-short {
+    color: var(--color-accent-red);
+}
+
+.text-warn {
+    color: var(--color-accent-orange);
+}
+
+/* --- The Layout Shell --- */
+.app-container {
+    display: grid;
+    grid-template-rows: 40px 1fr;
+    /* Risk Banner (fixed height) | Content */
+    height: 100vh;
+}
+
+/* Sidebar + Main Content */
+.main-workspace {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    /* Slim Nav | Dashboard */
+    overflow: hidden;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* --- Generic Widget Panel --- */
+.widget-panel {
+    background: var(--color-bg-panel);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.widget-header {
+    background: var(--color-bg-panel-header);
+    padding: 6px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    /* Implies draggable */
+}
+
+.widget-content {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+}
+
+/* --- Scrollbars --- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-app);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-rows: 60px 1fr;
+        /* Taller header for stacked metrics */
+    }
+
+    .risk-banner {
+        flex-direction: column;
+        height: auto;
+        padding: 8px;
+        gap: 8px;
+    }
+
+    .risk-metric-group {
+        width: 100%;
+        justify-content: space-between;
+        gap: 4px;
+    }
+
+    .main-workspace {
+        grid-template-columns: 1fr;
+        /* Hide sidebar or make it bottom nav */
+    }
+
+    .side-nav {
+        display: none;
+        /* User requirement: Prioritize Risk. Nav is secondary. */
+    }
+
+    .dashboard-grid {
+        display: flex;
+        /* Switch from Grid to Stack */
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    /* Force widgets to have min-height on mobile */
+    .widget-panel {
+        min-height: 300px;
+    }
+}

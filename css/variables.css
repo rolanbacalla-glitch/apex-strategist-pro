@@ -1,0 +1,55 @@
+/* 
+   Apex Strategist Pro - Design System 
+   "Institutional. Sober. Risk-First."
+*/
+
+:root {
+    /* --- Foundation: The Dark Desk --- */
+    /* Deep charcoal, not pure black, to reduce eye strain over 12h shifts */
+    --color-bg-app: #0e1014;       /* Main window background */
+    --color-bg-panel: #161a25;     /* Widget/Panel background */
+    --color-bg-panel-header: #1e2330;
+    --color-border: #2a2e39;       /* Subtle separators */
+    
+    /* --- Typography: Data Density --- */
+    /* Sans-serif for UI, Monospace for numbers/tabular data */
+    --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Roboto Mono', monospace;
+    
+    --text-primary: #e0e0e0;       /* High legibility */
+    --text-secondary: #8b929a;     /* Labels, less critical info */
+    --text-tertiary: #5d636b;      /* Disabled / Watermarks */
+
+    /* --- The Dr. Kane Risk Palette --- */
+    /* Colors are function-first, not decorative. */
+    
+    /* Teal/Green: "Structure is holding" / Long / Profit */
+    --color-accent-teal: #00ce9b;
+    --color-accent-teal-dim: rgba(0, 206, 155, 0.1);
+
+    /* Orange: "Warning" / Caution / Watchlist */
+    --color-accent-orange: #ff9f0a;
+    --color-accent-orange-dim: rgba(255, 159, 10, 0.1);
+
+    /* Red: "Critical Risk" / Short / Loss / Stopout */
+    --color-accent-red: #ff3b30;
+    --color-accent-red-dim: rgba(255, 59, 48, 0.1);
+    
+    /* Sentinel Purple: "Advisory" / AI Insights / VaR Limits */
+    --color-sentinel: #bf5af2;
+
+    /* --- Spacing & Layout --- */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    
+    --border-radius-sm: 4px;       /* Sharp, professional corners */
+    --border-radius-md: 6px;
+
+    /* --- Z-Indices --- */
+    --z-grid: 10;
+    --z-panel: 20;
+    --z-risk-banner: 1000;         /* MUST be always visible */
+    --z-modal: 2000;
+}
